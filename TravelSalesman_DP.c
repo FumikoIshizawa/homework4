@@ -15,9 +15,9 @@
 
 float locateArray[maxArray][2];
 int count=1;
-float dp[1<<128][maxArray];
+float dp[1<<64][maxArray];
 
-//calclate distance
+//距離を計算
 float calcDist(float x1, float x2, float y1, float y2){
 	return sqrt(pow((x1-y1),2)
 					+pow((x2-y2),2));
@@ -33,11 +33,11 @@ float min(float a, float b){
 //Sは集合。ビット演算でこれを示す
 float searchWay(int num, int S, int v){
 	int u; float ans=INF;
+	//訪問済みなら計算済みなので、その値を返す
 	if(dp[S][v] >= 0){
 		return dp[S][v];
 	}
 
-	//訪問済み
 	//Sは集合なので、2^n-1と値が等しければ、全ての都市を訪問した事となるので、0を返せば良い
 	if( (1<<num)-1 == S && v==0) 
 		return dp[S][v]=0;
