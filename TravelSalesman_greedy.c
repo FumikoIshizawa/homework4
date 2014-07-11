@@ -109,7 +109,7 @@ void searchWay(int num){
 	distance += calcDist(locateArray[i][0], locateArray[i][1],
 								locateArray[0][0], locateArray[0][1]);
 
-	printf("%f\n", distance);
+	printf("answer: %f\n", distance);
 
 
 	//結び変える
@@ -125,7 +125,7 @@ void searchWay(int num){
 	distance += calcDist(locateArray[i][0], locateArray[i][1],
 								locateArray[0][0], locateArray[0][1]);
 
-	printf("%f\n", distance);
+	printf("\n2-opt answer: %f\n\n", distance);
 	
 
 }
